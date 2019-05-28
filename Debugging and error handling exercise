@@ -1,0 +1,34 @@
+Option Explicit
+
+Sub AddDetailsToList()
+
+    Dim sName As String
+    Dim dDoB As Date
+    Dim sYouAre As String
+    Dim sYouWant As String
+    Dim rNextBlank As Range
+    
+    sName = InputBox("Enter your name")
+    
+    'add an On Error statement here
+    On Error GoTo errorhandling
+    dDoB = InputBox("Enter your date of birth")
+    
+    sYouAre = InputBox("You are a:")
+    sYouWant = InputBox("You're looking for a:")
+    
+    Set rNextBlank = Sheet2.Range("A1048576").End(xlUp).Offset(1, 0)
+    
+    With rNextBlank
+        .Value = sName
+        .Offset(0, 1).Value = dDoB
+        .Offset(0, 2).Value = sYouAre
+        .Offset(0, 3).Value = sYouWant
+    End With
+    
+    'add an error-handling section here
+errorhandling:
+    MsgBox ("The error is: " & Err.Description)
+End Sub
+
+'credit to wise owl for coming up with this project
