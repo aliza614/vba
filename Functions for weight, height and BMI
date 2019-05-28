@@ -1,0 +1,24 @@
+Option Explicit
+
+Const KgRate As Double = 0.45359237     'number of kg in one pound
+Const PoundsInStone As Integer = 14     'number of pounds in one stone
+
+Const InchesInFeet As Integer = 12      'number of inches in one foot
+Const CmsInInch As Double = 2.54        'number of centimetres in an inch
+
+
+'•A function to turn inches and feet into metres, to be used to calculate cell C7
+Function inchesToFeet(inches)
+    inchesToFeet = inches / InchesInFeet
+End Function
+'•A function to turn stones and pounds into kilograms, to be used to calculate the figures in column E
+Function toKG(stones, pounds)
+    toKG = (stones / PoundsInStone + pounds) * KgRate
+End Function
+
+'•A function to turn height in metres and weight in kilograms into Body Mass Index, using the formula (Weight in kilograms) / (Height in metres squared)
+Function toBMI(height, weight)
+    toBMI = weight / height
+End Function
+
+'credit to wise owl for coming up with this project
