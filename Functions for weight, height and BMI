@@ -20,3 +20,4 @@ End Function
 Function toBMI(height, weight)
     toBMI = weight / height
 End Function
+'credit to wise owl for this project
