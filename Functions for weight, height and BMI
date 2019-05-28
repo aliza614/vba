@@ -9,7 +9,7 @@ Const CmsInInch As Double = 2.54        'number of centimetres in an inch
 
 '•A function to turn inches and feet into metres, to be used to calculate cell C7
 Function inchesFeetToMeters(inches, feet)
-    inchesFeetToMeters = (inches / InchesInFeet + feet) * 0.3048
+    inchesFeetToMeters = (inches + InchesInFeet * feet) * CmsInInch / 100
 End Function
 '•A function to turn stones and pounds into kilograms, to be used to calculate the figures in column E
 Function toKG(stones, pounds)
